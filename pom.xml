@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.wildcodeschool</groupId>
-	<artifactId>dc</artifactId>
+	<artifactId>wildblog-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dc</name>
+	<name>wildblog-api</name>
 	<description>Demo project for Spring Boot using Docker Compose</description>
 	<url/>
 	<licenses>
