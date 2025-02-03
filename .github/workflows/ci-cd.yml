@@ -40,7 +40,7 @@ jobs:
     name: Deploy Application
     needs: build-and-test  # Déployer seulement si les tests réussissent
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'  # Déployer uniquement sur main
+    if: github.ref == 'refs/heads/main'  # Si déployer sur main
 
     steps:
       - name: Checkout code
