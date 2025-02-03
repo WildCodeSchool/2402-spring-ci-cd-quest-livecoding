@@ -38,7 +38,7 @@ jobs:
         run: ./mvnw clean test
   deploy:
     name: Deploy Application
-    needs: build-and-test  # Déployer seulement si les tests réussissent
+    needs: build-and-test  # Déployer si les tests réussissent
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  # Si déployer sur main
 
