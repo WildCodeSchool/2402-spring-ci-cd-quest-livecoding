@@ -72,7 +72,7 @@ jobs:
             fi
           else
             echo 'Cloning repository...';
-            git clone git@github-wildblog-back:WildCodeSchool/2402-spring-ci-cd-quest-livecoding.git /home/ubuntu/wildblog-api;
+            git clone git@${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
           fi
           "
 
