@@ -56,6 +56,10 @@ jobs:
       - name: Test SSH connection
         run: ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful!'"
 
+      - name: Test SSH connection to GitHub
+        run: |
+          ssh -i ~/.ssh/id_ed25519_wildblog -T github-wildblog-back
+
       - name: Clone or update project on server
         run: |
           ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
