@@ -68,11 +68,11 @@ jobs:
             else
               echo 'Invalid directory exists. Cleaning up and cloning again...';
               rm -rf /home/${{ secrets.SERVER_USER }}/wildblog-api;
-              git clone git@github.com:${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
+              git clone git@${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
             fi
           else
             echo 'Cloning repository...';
-            git clone git@github.com:${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
+            git clone git@${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
           fi
           "
 
