@@ -53,12 +53,6 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519_wildblog
           ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
-      - name: Debug Network
-        run: ping -c 4 ${{ secrets.SERVER_IP }}
-
-      - name: Test SSH connection
-        run: ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful!'"
-
       - name: Clone or update project on server
         run: |
           ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
