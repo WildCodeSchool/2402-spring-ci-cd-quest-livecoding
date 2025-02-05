@@ -72,7 +72,7 @@ jobs:
             fi
           else
             echo 'Cloning repository...';
-            git clone git@${{ secrets.REPOSITORY_NAME }} /home/${{ secrets.SERVER_USER }}/wildblog-api;
+            git clone git@${{ secrets.REPOSITORY_NAME }} wildblog-api;
           fi
           "
 
