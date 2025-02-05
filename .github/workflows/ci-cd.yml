@@ -88,6 +88,14 @@ jobs:
           chmod 600 /home/${{ secrets.SERVER_USER }}/wildblog-api/.env.prod
           "
 
+      - name: Verify .env file on server
+        run: |
+          ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          echo 'Checking .env.prod content...';
+          cat /home/${{ secrets.SERVER_USER }}/wildblog-api/.env.prod;
+          "
+
+
       - name: Build Docker image and deploy
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
