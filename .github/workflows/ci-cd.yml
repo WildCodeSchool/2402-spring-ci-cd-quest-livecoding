@@ -68,7 +68,7 @@ jobs:
 
       - name: Test SSH connection to GitHub
         run: |
-          ssh -i ~/.ssh/id_ed25519_wildblog -T github-wildblog-back
+          ssh -i ~/.ssh/id_ed25519_wildblog -T github-wildblog-back || true
 
       - name: Clone or update project on server
         run: |
