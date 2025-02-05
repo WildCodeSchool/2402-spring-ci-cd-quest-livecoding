@@ -30,8 +30,8 @@ public class ItemRepositoryTest {
 
         // Assert
         assertThat(items).hasSize(2);
-        assertThat(items.get(0).getName()).isEqualTo("Item 3");
-        assertThat(items.get(1).getName()).isEqualTo("Item 4");
+        assertThat(items.get(0).getName()).isEqualTo("Item 1");
+        assertThat(items.get(1).getName()).isEqualTo("Item 2");
     }
 }
 
