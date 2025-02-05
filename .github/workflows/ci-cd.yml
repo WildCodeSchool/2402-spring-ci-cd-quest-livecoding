@@ -56,6 +56,16 @@ jobs:
       - name: Test SSH connection
         run: ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "echo 'SSH connection successful!'"
 
+      - name: Configure SSH alias in GitHub Actions
+        run: |
+          mkdir -p ~/.ssh
+          echo "Host github-wildblog-back
+              HostName github.com
+              User git
+              IdentityFile ~/.ssh/id_ed25519_wildblog
+              IdentitiesOnly yes" > ~/.ssh/config
+          chmod 600 ~/.ssh/config
+
       - name: Test SSH connection to GitHub
         run: |
           ssh -i ~/.ssh/id_ed25519_wildblog -T github-wildblog-back
