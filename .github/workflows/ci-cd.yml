@@ -112,7 +112,7 @@ jobs:
 
       - name: Build Docker image and deploy
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+          ssh -i ~/.ssh/id_ed25519_wildblog -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
           cd /home/ubuntu/wildblog-api &&
           docker compose down &&
           docker compose --env-file .env.prod up -d --build
